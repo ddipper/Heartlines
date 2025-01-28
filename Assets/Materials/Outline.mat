@@ -74,8 +74,8 @@ Material:
     - _Color: {r: 1, g: 1, b: 1, a: 1}
     - _Flip: {r: 1, g: 1, b: 1, a: 1}
     - _RendererColor: {r: 1, g: 1, b: 1, a: 1}
-    - _offsetBottom: {r: 0, g: 0.015, b: 0, a: 0}
-    - _offsetLeft: {r: 0.015, g: 0, b: 0, a: 0}
-    - _offsetRight: {r: -0.015, g: 0, b: 0, a: 0}
-    - _offsetTop: {r: 0, g: -0.015, b: 0, a: 0}
+    - _offsetBottom: {r: 0, g: 0.032, b: 0, a: 0}
+    - _offsetLeft: {r: 0.08, g: 0, b: 0, a: 0}
+    - _offsetRight: {r: -0.08, g: 0, b: 0, a: 0}
+    - _offsetTop: {r: 0, g: -0.032, b: 0, a: 0}
   m_BuildTextureStacks: []
