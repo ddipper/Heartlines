@@ -10,7 +10,11 @@ using UnityEngine.Tilemaps;
 
 public class Interactable : Tile
 {
-    [SerializeField] private int dddd;
     [SerializeField] private int ID;
 
+    public int GetTileID(Vector3Int position)
+    {
+        ID = 1000 * position.x + position.y;
+        return ID;
+    }
 }
