@@ -5,17 +5,21 @@ using UnityEngine;
 
 public class SpriteSorter : MonoBehaviour
 {
+    [SerializeField] private bool isStatic = false;
     [SerializeField] private float offset = 0;
-    private int sortingOrderBase = 0;
-    private Renderer renderer;
+    private const int SortingOrderBase = 0;
+    private Renderer _renderer;
     
     private void Awake()
     {
-        renderer = GetComponent<Renderer>();
+        _renderer = GetComponent<Renderer>();
     }
 
+    //FIXME: если мало фпс, убрать LateUpdate
     private void LateUpdate()
     {
-        renderer.sortingOrder = (int)(sortingOrderBase - transform.position.y + offset);
+        _renderer.sortingOrder = (int)(SortingOrderBase - transform.position.y + offset);
+        
+        if(isStatic) Destroy(this);
     }
 }

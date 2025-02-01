@@ -196,7 +196,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 1
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -1000,7 +1000,7 @@ TilemapRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 0
+  m_SortingOrder: -2
   m_ChunkSize: {x: 32, y: 32, z: 32}
   m_ChunkCullingBounds: {x: 0, y: 0, z: 0}
   m_MaxChunkCount: 16
@@ -2951,7 +2951,7 @@ MonoBehaviour:
       m_Calls: []
   m_FontData:
     m_Font: {fileID: 12800000, guid: e3e63d9b8188a6146822408d2ea0993d, type: 3}
-    m_FontSize: 14
+    m_FontSize: 29
     m_FontStyle: 0
     m_BestFit: 0
     m_MinSize: 10
@@ -2984,6 +2984,7 @@ GameObject:
   - component: {fileID: 1242191256}
   - component: {fileID: 1242191255}
   - component: {fileID: 1242191260}
+  - component: {fileID: 1242191261}
   m_Layer: 0
   m_Name: tumba_1_0
   m_TagString: Untagged
@@ -3023,7 +3024,7 @@ BoxCollider2D:
   m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: -0.3}
+  m_Offset: {x: 0, y: -0.25}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.34}
@@ -3034,7 +3035,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.34, y: 0.26}
+  m_Size: {x: 0.34, y: 0.16}
   m_EdgeRadius: 0
 --- !u!61 &1242191256
 BoxCollider2D:
@@ -3163,6 +3164,20 @@ MonoBehaviour:
   outlineMat: {fileID: 2100000, guid: 69f9a800a7abad840bb2943e8128bd00, type: 2}
   interactionText: Press E to open TUMBA
   uiText: {fileID: 1014728452}
+--- !u!114 &1242191261
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1242191254}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74dca0f247da1946bf93721e803deb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 0
+  offset: 0
 --- !u!1 &1415971262
 GameObject:
   m_ObjectHideFlags: 0
@@ -3176,6 +3191,7 @@ GameObject:
   - component: {fileID: 1415971263}
   - component: {fileID: 1415971266}
   - component: {fileID: 1415971267}
+  - component: {fileID: 1415971268}
   m_Layer: 0
   m_Name: Player (almost)
   m_TagString: Player
@@ -3326,6 +3342,20 @@ CircleCollider2D:
   m_Offset: {x: 0, y: -0.25}
   serializedVersion: 2
   m_Radius: 0.25
+--- !u!114 &1415971268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415971262}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74dca0f247da1946bf93721e803deb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 0
+  offset: 0
 --- !u!1 &1570209657
 GameObject:
   m_ObjectHideFlags: 0
@@ -3811,6 +3841,7 @@ GameObject:
   - component: {fileID: 2085231545}
   - component: {fileID: 2085231544}
   - component: {fileID: 2085231547}
+  - component: {fileID: 2085231548}
   m_Layer: 0
   m_Name: bed_1
   m_TagString: Untagged
@@ -3910,7 +3941,7 @@ BoxCollider2D:
   m_IsTrigger: 0
   m_UsedByEffector: 0
   m_UsedByComposite: 0
-  m_Offset: {x: 0, y: 0.22999999}
+  m_Offset: {x: 0, y: 0.2}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.2125}
@@ -3921,7 +3952,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 0.37, y: 0.76}
+  m_Size: {x: 0.37, y: 0.69}
   m_EdgeRadius: 0
 --- !u!212 &2085231546
 SpriteRenderer:
@@ -3990,6 +4021,20 @@ MonoBehaviour:
   outlineMat: {fileID: 2100000, guid: 69f9a800a7abad840bb2943e8128bd00, type: 2}
   interactionText: Press E to open BED
   uiText: {fileID: 1014728452}
+--- !u!114 &2085231548
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2085231541}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e74dca0f247da1946bf93721e803deb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isStatic: 1
+  offset: -0.56
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
