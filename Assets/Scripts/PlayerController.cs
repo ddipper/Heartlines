@@ -4,12 +4,15 @@ using System.Collections.Generic;
 using Unity.Burst.CompilerServices;
 using UnityEngine;
 using UnityEngine.Tilemaps;
+using UnityEngine.U2D.Animation;
 
 public class PlayerController : MonoBehaviour
 {
     [SerializeField] private float speed;
     private Vector2 direction;
 
+
+    
     //matvei
     private Vector2 pos;
     [SerializeField] private Interaction inter;
@@ -35,7 +38,7 @@ public class PlayerController : MonoBehaviour
     }
 
     //matvei
-    private void OnTriggerEnter2D(Collider2D collision)
+    /*private void OnTriggerEnter2D(Collider2D collision)
     {       
         inter.Interact(pos + direction * 1.16f, false);
     }
@@ -43,6 +46,7 @@ public class PlayerController : MonoBehaviour
     private void OnTriggerExit2D(Collider2D collision)
     {
         inter.Interact(pos + direction * 1.16f, true);
-    }
+    }*/
     //matvei
+
 }
