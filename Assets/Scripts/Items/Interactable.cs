@@ -3,8 +3,15 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.Serialization;
+using System.IO;
 
-public class Outline : MonoBehaviour
+[System.Serializable]
+public class TempJsonWrapper
+{
+    public string inter_tumba;
+}
+
+public class Interactable : MonoBehaviour
 {
     [SerializeField] private Material outlineMat;
     private Material defaultMat;
@@ -22,6 +29,14 @@ public class Outline : MonoBehaviour
         {
             uiText.gameObject.SetActive(true);
         }
+        
+        string path = Path.Combine(Application.streamingAssetsPath, "interaction.json");
+        string json = File.ReadAllText(path);
+        Debug.Log(json);
+        
+        TempJsonWrapper data = JsonUtility.FromJson<TempJsonWrapper>(json);
+
+        Debug.Log(data.inter_tumba);
     }
     
     private void OnTriggerEnter2D(Collider2D other)
