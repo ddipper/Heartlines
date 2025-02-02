@@ -1,42 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-using UnityEngine.Serialization;
 using System.IO;
-
-[System.Serializable]
-public class TempJsonWrapper
-{
-    public string inter_tumba;
-}
+using System.Reflection;
+using System.Collections.Generic;
 
 public class Interactable : MonoBehaviour
 {
     [SerializeField] private Material outlineMat;
-    private Material defaultMat;
+    private Material _defaultMat;
     private SpriteRenderer _spriteRenderer;
 
-    [SerializeField] private string interactionText;
+    [SerializeField] private string jsonKey;
     [SerializeField] private Text uiText;
+    private Dictionary<string, string> _jsonData = new Dictionary<string, string>();
     
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
-        defaultMat = _spriteRenderer.material;
+        _defaultMat = _spriteRenderer.material;
 
         if (uiText != null)
         {
             uiText.gameObject.SetActive(true);
         }
         
-        string path = Path.Combine(Application.streamingAssetsPath, "interaction.json");
-        string json = File.ReadAllText(path);
-        Debug.Log(json);
-        
-        TempJsonWrapper data = JsonUtility.FromJson<TempJsonWrapper>(json);
-
-        Debug.Log(data.inter_tumba);
+        JsonParse();
     }
     
     private void OnTriggerEnter2D(Collider2D other)
@@ -45,7 +33,11 @@ public class Interactable : MonoBehaviour
         {
             _spriteRenderer.material = outlineMat;
             uiText.gameObject.SetActive(true);
-            uiText.text = interactionText;
+
+            _jsonData.TryGetValue(jsonKey, out string value);
+            
+            uiText.text = value ?? "JSON TEXT NOT FOUND";
+            
         }
     }
 
@@ -53,8 +45,36 @@ public class Interactable : MonoBehaviour
     {
         if (other.CompareTag("Player") && uiText)
         {
-            _spriteRenderer.material = defaultMat;
+            _spriteRenderer.material = _defaultMat;
             uiText.gameObject.SetActive(false);
+        }
+    }
+
+    private void JsonParse()
+    {
+        string path = Path.Combine(Application.streamingAssetsPath, "interaction.json");
+        if (File.Exists(path))
+        {
+            string json = File.ReadAllText(path);
+            //Debug.Log("JSON Content: " + json);
+            
+            json = json.Trim('{', '}').Replace("\"", "");
+            string[] keyValues = json.Split(',');
+
+            foreach (string pair in keyValues)
+            {
+                string[] entry = pair.Split(':');
+                if (entry.Length == 2)
+                {
+                    string key = entry[0].Trim();
+                    string value = entry[1].Trim();
+                    _jsonData[key] = value;
+                }
+            }
+        }
+        else
+        {
+            Debug.LogError($"Файл {path} не найден!");
         }
     }
 }

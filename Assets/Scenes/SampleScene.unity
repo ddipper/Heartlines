@@ -2347,52 +2347,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!1 &535827503
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 535827505}
-  - component: {fileID: 535827504}
-  m_Layer: 0
-  m_Name: Interaction
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &535827504
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535827503}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 364ddacf113f06e4d8e9aef329646976, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  map: {fileID: 947386911}
-  outline: {fileID: 2100000, guid: 69f9a800a7abad840bb2943e8128bd00, type: 2}
---- !u!4 &535827505
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 535827503}
-  serializedVersion: 2
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -2.4053993, y: 1.3916411, z: 0.0001488966}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &613674934
 GameObject:
   m_ObjectHideFlags: 0
@@ -3288,7 +3242,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMat: {fileID: 2100000, guid: 69f9a800a7abad840bb2943e8128bd00, type: 2}
-  interactionText: Press E to open TUMBA
+  jsonKey: inter_tumba
   uiText: {fileID: 1014728452}
 --- !u!114 &1242191261
 MonoBehaviour:
@@ -3422,7 +3376,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 2
-  inter: {fileID: 535827504}
 --- !u!212 &1415971264
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -4229,7 +4182,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   outlineMat: {fileID: 2100000, guid: 69f9a800a7abad840bb2943e8128bd00, type: 2}
-  interactionText: Press E to open BED
+  jsonKey: inter_bed
   uiText: {fileID: 1014728452}
 --- !u!114 &2085231548
 MonoBehaviour:
@@ -4244,7 +4197,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   isStatic: 1
-  offset: -0.56
+  offset: -0.59
 --- !u!1 &2134760835
 GameObject:
   m_ObjectHideFlags: 0
@@ -4338,7 +4291,6 @@ SceneRoots:
   - {fileID: 464405303}
   - {fileID: 1570209660}
   - {fileID: 1415971265}
-  - {fileID: 535827505}
   - {fileID: 498034525}
   - {fileID: 1397158846}
   - {fileID: 2134760837}
