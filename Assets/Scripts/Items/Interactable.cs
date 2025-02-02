@@ -1,8 +1,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 using System.IO;
-using System.Reflection;
 using System.Collections.Generic;
+using Newtonsoft.Json;
 
 public class Interactable : MonoBehaviour
 {
@@ -13,7 +13,7 @@ public class Interactable : MonoBehaviour
     [SerializeField] private string jsonKey;
     [SerializeField] private Text uiText;
     private Dictionary<string, string> _jsonData = new Dictionary<string, string>();
-    
+
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,10 +23,10 @@ public class Interactable : MonoBehaviour
         {
             uiText.gameObject.SetActive(true);
         }
-        
+
         JsonParse();
     }
-    
+
     private void OnTriggerEnter2D(Collider2D other)
     {
         if (other.CompareTag("Player") && uiText)
@@ -35,9 +35,9 @@ public class Interactable : MonoBehaviour
             uiText.gameObject.SetActive(true);
 
             _jsonData.TryGetValue(jsonKey, out string value);
-            
+
             uiText.text = value ?? "JSON TEXT NOT FOUND";
-            
+
         }
     }
 
@@ -57,20 +57,8 @@ public class Interactable : MonoBehaviour
         {
             string json = File.ReadAllText(path);
             //Debug.Log("JSON Content: " + json);
-            
-            json = json.Trim('{', '}').Replace("\"", "");
-            string[] keyValues = json.Split(',');
 
-            foreach (string pair in keyValues)
-            {
-                string[] entry = pair.Split(':');
-                if (entry.Length == 2)
-                {
-                    string key = entry[0].Trim();
-                    string value = entry[1].Trim();
-                    _jsonData[key] = value;
-                }
-            }
+            _jsonData = JsonConvert.DeserializeObject<Dictionary<string, string>>(json);
         }
         else
         {
