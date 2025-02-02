@@ -2972,6 +2972,52 @@ TilemapCollider2D:
   m_MaximumTileChangeCount: 1000
   m_ExtrusionFactor: 0
   m_UseDelaunayMesh: 0
+--- !u!1 &979714841
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 979714843}
+  - component: {fileID: 979714842}
+  m_Layer: 0
+  m_Name: CustomGrid
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &979714842
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979714841}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4d75b6fc06d5b2c4b8fbbb8d287dac0c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  map: {fileID: 947386911}
+  obj: []
+--- !u!4 &979714843
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 979714841}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1014728450
 GameObject:
   m_ObjectHideFlags: 0
@@ -3067,7 +3113,7 @@ GameObject:
   - component: {fileID: 1242191261}
   m_Layer: 0
   m_Name: tumba_1_0
-  m_TagString: Untagged
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4008,7 +4054,7 @@ GameObject:
   - component: {fileID: 2085231548}
   m_Layer: 0
   m_Name: bed_1
-  m_TagString: Untagged
+  m_TagString: interactable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -4022,7 +4068,7 @@ Transform:
   m_GameObject: {fileID: 2085231541}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0.5979998, y: -0.44799998, z: -0.0039524096}
+  m_LocalPosition: {x: 0.323, y: -0.04, z: -0.0039524096}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -4296,3 +4342,4 @@ SceneRoots:
   - {fileID: 498034525}
   - {fileID: 1397158846}
   - {fileID: 2134760837}
+  - {fileID: 979714843}

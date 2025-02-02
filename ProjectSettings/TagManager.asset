@@ -6,6 +6,7 @@ TagManager:
   tags:
   - int
   - temp
+  - interactable
   layers:
   - Default
   - TransparentFX
