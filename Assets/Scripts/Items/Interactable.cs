@@ -14,6 +14,8 @@ public class Interactable : MonoBehaviour
     [SerializeField] private Text uiText;
     private Dictionary<string, string> _jsonData = new Dictionary<string, string>();
 
+    public bool interaction;
+
     void Start()
     {
         _spriteRenderer = GetComponent<SpriteRenderer>();
@@ -23,6 +25,8 @@ public class Interactable : MonoBehaviour
         {
             uiText.gameObject.SetActive(true);
         }
+
+        interaction = false;
 
         JsonParse();
     }
@@ -38,6 +42,7 @@ public class Interactable : MonoBehaviour
 
             uiText.text = value ?? "JSON TEXT NOT FOUND";
 
+            interaction = true;
         }
     }
 
@@ -47,6 +52,8 @@ public class Interactable : MonoBehaviour
         {
             _spriteRenderer.material = _defaultMat;
             uiText.gameObject.SetActive(false);
+
+            interaction = false;
         }
     }
 
