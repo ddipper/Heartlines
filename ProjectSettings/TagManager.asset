@@ -7,6 +7,7 @@ TagManager:
   - int
   - temp
   - interactable
+  - room_renderer
   layers:
   - Default
   - TransparentFX
